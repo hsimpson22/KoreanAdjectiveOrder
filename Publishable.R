@@ -1,4 +1,6 @@
 #rm(list=ls(all=TRUE))
+
+#Loading script for nice regex searching with greedy return of string matches
 source("http://www.linguistics.ucsb.edu/faculty/stgries/exact_matches.r")
 
 # #Check # of tokens in the corpus
@@ -18,7 +20,7 @@ str(filewc)
 filewc<-c(filewc$V2)
 filewc<-as.numeric(filewc)
 sum(filewc) #token count = 61,060,421
-#however, the token count is really about half that amount, due to wc including the analysis and word form separately. This can be shown by looking at the first, small, file
+#Their website says the raw corpus is 70 million "phrases" (http://semanticweb.kaist.ac.kr/home/index.php/KAIST_Corpus). However, the token count is really about half that amount, due to wc including the analysis and word form separately. This can be shown by looking at the first, small, file
 biblefile<-scan(file="./BIBLE-1.txt.new.pos2", what=character(0), sep="\n", quiet=TRUE) #wc = 272
 length(exact.matches("[^\\s]+\\s+[^\\s]+\\/[^\\s]+", biblefile, pcre=TRUE, case.sens=FALSE)[[1]]) #111
 length(exact.matches("\\t", biblefile, pcre=TRUE, case.sens=FALSE)[[1]]) #212
