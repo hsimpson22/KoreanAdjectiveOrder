@@ -4,7 +4,10 @@ This repo contains the final versions of my article analyzing adjective order in
 
 Publishable.R and KAIST_morphsyn_adjadjx.R contain the accompanying R code I wrote to process this data a few years ago. WARNING: This code is VERY UGLY, but it works :)
 
-KAIST_morphsyn_adjadjx.R reads in KAIST morpho-syntactically tagged text files, and uses a regex to identify sequences of two adjectives and the next following word (which should be a noun). 
+KAIST_morphsyn_adjadjx.R does the following: 
+- reads in KAIST morpho-syntactically tagged text files
+- uses a regex to identify sequences of two adjectives and the next following word (which should be a noun)
+- outputs a .csv file containing these matches
 
 Publishable.R does the following : 
 - reads in a .csv file containing the matches to a regex I wrote to extract adjective-adjective-noun sequences in the morphologically-tagged KAIST corpus. 
